@@ -1,0 +1,862 @@
+{
+ "photos/art-tiehuo/art-tiehuo-01.jpg": [
+  1600,
+  1066
+ ],
+ "photos/art-tiehuo/art-tiehuo-02.jpg": [
+  1120,
+  1600
+ ],
+ "photos/art-tiehuo/art-tiehuo-03.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-tiehuo/art-tiehuo-04.jpg": [
+  1600,
+  1066
+ ],
+ "photos/art-tiehuo/art-tiehuo-05.jpg": [
+  1600,
+  1066
+ ],
+ "photos/art-chezhan/art-chezhan-01.jpg": [
+  1600,
+  841
+ ],
+ "photos/art-chezhan/art-chezhan-02.jpg": [
+  1600,
+  959
+ ],
+ "photos/art-chezhan/art-chezhan-03.jpg": [
+  1600,
+  901
+ ],
+ "photos/art-chezhan/art-chezhan-04.jpg": [
+  1600,
+  811
+ ],
+ "photos/art-chezhan/art-chezhan-05.jpg": [
+  1600,
+  813
+ ],
+ "photos/art-chezhan/art-chezhan-06.jpg": [
+  1600,
+  944
+ ],
+ "photos/art-chezhan/art-chezhan-07.jpg": [
+  1600,
+  828
+ ],
+ "photos/art-gujin/art-gujin-01.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-gujin/art-gujin-02.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-gujin/art-gujin-03.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-gujin/art-gujin-04.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-gujin/art-gujin-05.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-wenming/art-wenming-01.jpg": [
+  1600,
+  1066
+ ],
+ "photos/art-wenming/art-wenming-02.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-wenming/art-wenming-03.jpg": [
+  1600,
+  909
+ ],
+ "photos/art-wenming/art-wenming-04.jpg": [
+  1600,
+  968
+ ],
+ "photos/art-hanzheng/art-hanzheng-01.jpg": [
+  1600,
+  848
+ ],
+ "photos/art-hanzheng/art-hanzheng-02.jpg": [
+  1600,
+  1067
+ ],
+ "photos/art-hanzheng/art-hanzheng-03.jpg": [
+  1600,
+  877
+ ],
+ "photos/art-hanzheng/art-hanzheng-04.jpg": [
+  1600,
+  906
+ ],
+ "photos/art-hanzheng/art-hanzheng-05.jpg": [
+  1600,
+  919
+ ],
+ "photos/biz-pufa/biz-pufa-01.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-02.jpg": [
+  1600,
+  1051
+ ],
+ "photos/biz-pufa/biz-pufa-03.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-04.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-05.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-06.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-07.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-08.jpg": [
+  1600,
+  989
+ ],
+ "photos/biz-pufa/biz-pufa-09.jpg": [
+  1600,
+  1066
+ ],
+ "photos/biz-pufa/biz-pufa-10.jpg": [
+  1600,
+  1066
+ ],
+ "photos/art-time/art-time-01.jpg": [
+  1600,
+  888
+ ],
+ "photos/art-time/art-time-02.jpg": [
+  1600,
+  758
+ ],
+ "photos/art-time/art-time-03.jpg": [
+  1128,
+  1600
+ ],
+ "photos/art-time/art-time-04.jpg": [
+  1600,
+  590
+ ],
+ "photos/art-landscape/art-landscape-01.jpg": [
+  1600,
+  941
+ ],
+ "photos/art-landscape/art-landscape-02.jpg": [
+  1600,
+  891
+ ],
+ "photos/art-landscape/art-landscape-03.jpg": [
+  1600,
+  942
+ ],
+ "photos/art-landscape/art-landscape-04.jpg": [
+  1600,
+  891
+ ],
+ "photos/art-landscape/art-landscape-05.jpg": [
+  1066,
+  1600
+ ],
+ "photos/art-landscape/art-landscape-06.jpg": [
+  1600,
+  858
+ ],
+ "photos/art-landscape/art-landscape-07.jpg": [
+  1600,
+  883
+ ],
+ "video-stills/art-dengjia.jpg": [
+  1600,
+  681
+ ],
+ "video-stills/art-huisheng.jpg": [
+  1600,
+  681
+ ],
+ "video-stills/art-secai.jpg": [
+  1600,
+  900
+ ],
+ "video-stills/art-shiyan.jpg": [
+  1600,
+  681
+ ],
+ "video-stills/art-xiangqian.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/art-zouchu.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/art-zuizhong.jpg": [
+  1600,
+  681
+ ],
+ "video-stills/biz-aigao.jpg": [
+  1282,
+  736
+ ],
+ "video-stills/biz-aimanju.jpg": [
+  1280,
+  720
+ ],
+ "video-stills/biz-daxing.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-dec16.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-diandian.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-huaban.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-hunli.jpg": [
+  1600,
+  900
+ ],
+ "video-stills/biz-huodong.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-lunhua.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-nov30.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-saima.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-shangye.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-shengri.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-tandian.jpg": [
+  899,
+  1600
+ ],
+ "video-stills/biz-wuchuan.jpg": [
+  1600,
+  900
+ ],
+ "video-stills/biz-xindian.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/biz-youeryuan.jpg": [
+  1600,
+  899
+ ],
+ "video-stills/candidates/art-dengjia_1.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-dengjia_2.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-dengjia_3.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-dengjia_4.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-dengjia_5.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-dengjia_6.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-huisheng_1.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-huisheng_2.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-huisheng_3.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-huisheng_4.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-huisheng_5.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-huisheng_6.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-secai_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-secai_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-secai_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-secai_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-secai_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-secai_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-shiyan_1.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-shiyan_2.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-shiyan_3.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-shiyan_4.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-shiyan_5.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-shiyan_6.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-xiangqian_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-xiangqian_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-xiangqian_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-xiangqian_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-xiangqian_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-xiangqian_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zouchu_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zouchu_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zouchu_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zouchu_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zouchu_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zouchu_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/art-zuizhong_1.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-zuizhong_2.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-zuizhong_3.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-zuizhong_4.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-zuizhong_5.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/art-zuizhong_6.jpg": [
+  480,
+  204
+ ],
+ "video-stills/candidates/biz-aigao_1.jpg": [
+  480,
+  275
+ ],
+ "video-stills/candidates/biz-aigao_2.jpg": [
+  480,
+  275
+ ],
+ "video-stills/candidates/biz-aigao_3.jpg": [
+  480,
+  275
+ ],
+ "video-stills/candidates/biz-aigao_4.jpg": [
+  480,
+  275
+ ],
+ "video-stills/candidates/biz-aigao_5.jpg": [
+  480,
+  275
+ ],
+ "video-stills/candidates/biz-aigao_6.jpg": [
+  480,
+  275
+ ],
+ "video-stills/candidates/biz-aimanju_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-aimanju_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-aimanju_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-aimanju_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-aimanju_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-aimanju_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-daxing_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-daxing_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-daxing_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-daxing_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-daxing_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-daxing_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-dec16_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-dec16_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-dec16_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-dec16_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-dec16_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-dec16_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-diandian_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-diandian_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-diandian_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-diandian_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-diandian_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-diandian_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huaban_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huaban_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huaban_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huaban_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huaban_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huaban_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-hunli_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-hunli_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-hunli_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-hunli_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-hunli_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-hunli_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huodong_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huodong_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huodong_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huodong_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huodong_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-huodong_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-lunhua_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-lunhua_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-lunhua_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-lunhua_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-lunhua_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-lunhua_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-nov30_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-nov30_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-nov30_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-nov30_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-nov30_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-nov30_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-saima_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-saima_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-saima_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-saima_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-saima_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-saima_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shangye_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shangye_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shangye_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shangye_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shangye_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shangye_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shengri_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shengri_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shengri_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shengri_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shengri_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-shengri_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-tandian_1.jpg": [
+  270,
+  480
+ ],
+ "video-stills/candidates/biz-tandian_2.jpg": [
+  270,
+  480
+ ],
+ "video-stills/candidates/biz-tandian_3.jpg": [
+  270,
+  480
+ ],
+ "video-stills/candidates/biz-tandian_4.jpg": [
+  270,
+  480
+ ],
+ "video-stills/candidates/biz-tandian_5.jpg": [
+  270,
+  480
+ ],
+ "video-stills/candidates/biz-tandian_6.jpg": [
+  270,
+  480
+ ],
+ "video-stills/candidates/biz-wuchuan_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-wuchuan_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-wuchuan_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-wuchuan_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-wuchuan_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-wuchuan_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-xindian_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-xindian_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-xindian_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-xindian_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-xindian_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-xindian_6.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-youeryuan_1.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-youeryuan_2.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-youeryuan_3.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-youeryuan_4.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-youeryuan_5.jpg": [
+  480,
+  270
+ ],
+ "video-stills/candidates/biz-youeryuan_6.jpg": [
+  480,
+  270
+ ]
+}
