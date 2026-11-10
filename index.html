@@ -149,32 +149,54 @@ h2 .gx{background:var(--grad);-webkit-background-clip:text;background-clip:text;
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .series-head p{color:var(--ink-dim);font-size:13px;letter-spacing:1.5px}
 
-/* ── 海报式错落排版（不重叠、不变形） ───────── */
-.banner{width:100%;aspect-ratio:21/10;margin-bottom:16px}
-@media (max-width:620px){.banner{aspect-ratio:16/10}}
-.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;grid-auto-flow:dense}
-.vgrid.v4{grid-template-columns:repeat(4,1fr)}
-.vgrid .vid.w2{grid-column:span 2;aspect-ratio:32/9}
-@media (max-width:900px){.vgrid.v4{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:620px){.vgrid,.vgrid.v4{grid-template-columns:repeat(2,1fr)}.vgrid .vid.w2{grid-column:span 2;aspect-ratio:16/9}}
-.masonry{columns:3;column-gap:16px}
-.masonry.m2{columns:2}
-.masonry.m4{columns:4}
-.masonry>*{break-inside:avoid;margin-bottom:16px}
-@media (max-width:900px){.masonry.m4{columns:3}}
-@media (max-width:620px){.masonry,.masonry.m4{columns:2}}
-.dn{margin-top:84px}
-.stagger{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
-.stagger.s4{grid-template-columns:repeat(4,1fr)}
-.stagger .ph{aspect-ratio:3/4}
-.stagger.s4 .ph{aspect-ratio:4/5}
-.stagger .dn{margin-top:56px}
-@media (max-width:900px){.stagger,.stagger.s4{grid-template-columns:repeat(3,1fr)}.stagger .dn{margin-top:30px}}
-@media (max-width:620px){.stagger,.stagger.s4{grid-template-columns:repeat(2,1fr)}.stagger .dn{margin-top:18px}}
-.st-tall{aspect-ratio:3/4}
-.st-land{aspect-ratio:4/3}
-.st-sq{aspect-ratio:1/1}
-.st-wide{aspect-ratio:3/2}
+/* ── 模板式系列结构（封面 + 信息条 + 统一网格 + 说明） ── */
+/* 封面大图：16:9，左下标题与标签，右下提示 */
+.s-banner{position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--rad);overflow:hidden;
+  background:#0b0b0e;border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 44px rgba(0,0,0,.6);
+  transform:translateZ(0)}
+.s-banner img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.16,.84,.3,1);filter:saturate(.96) brightness(.92)}
+.s-banner:hover img{transform:scale(1.04)}
+.s-banner .veil{position:absolute;inset:0;background:
+  linear-gradient(12deg,rgba(0,0,0,.82) 6%,rgba(0,0,0,.42) 42%,transparent 68%),
+  linear-gradient(transparent 62%,rgba(0,0,0,.55) 100%)}
+.s-banner .ovl{position:absolute;left:34px;bottom:30px;z-index:2;max-width:72%}
+.s-banner .ovl h3{font-family:var(--serif);font-size:clamp(26px,3.8vw,44px);letter-spacing:5px;font-weight:900;
+  line-height:1.25;text-shadow:0 4px 24px rgba(0,0,0,.7)}
+.s-banner .roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
+.s-banner .roles i{font-style:normal;font-size:12.5px;letter-spacing:2.5px;color:#e4e4e7;font-weight:600}
+.s-banner .roles em{font-style:normal;font-size:10.5px;letter-spacing:2px;padding:4px 13px;border-radius:999px;
+  color:#f5f5f7;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.s-banner .hint{position:absolute;right:26px;bottom:26px;z-index:2;font-size:11.5px;letter-spacing:2.5px;color:rgba(255,255,255,.85);
+  padding:7px 16px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);opacity:.9;transition:.35s}
+.s-banner:hover .hint{opacity:1;background:rgba(255,255,255,.18)}
+@media (max-width:620px){
+  .s-banner{aspect-ratio:4/3}
+  .s-banner .ovl{left:20px;bottom:18px;max-width:86%}
+  .s-banner .hint{display:none}
+}
+/* 信息条：左 栏目 / 中 署名 / 右 分类 */
+.meta-strip{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:13px 6px;border-bottom:1px solid var(--line);
+  font-size:11px;letter-spacing:3.5px;color:var(--ink-dim)}
+.meta-strip b{color:var(--ink);font-weight:600;letter-spacing:4px}
+/* 小节标题 */
+.sub-title{margin:36px 0 20px;font-size:15.5px;font-weight:600;letter-spacing:3px;display:flex;align-items:center;gap:14px}
+.sub-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.2),transparent)}
+/* 统一比例网格 */
+.ugrid{display:grid;gap:14px}
+.ugrid.c3{grid-template-columns:repeat(3,1fr)}
+.ugrid.c4{grid-template-columns:repeat(4,1fr)}
+.ugrid.c5{grid-template-columns:repeat(5,1fr)}
+.ugrid .ph{aspect-ratio:4/3}
+.ugrid.c5 .ph{aspect-ratio:3/4}
+.ugrid .vid{aspect-ratio:16/9}
+@media (max-width:900px){.ugrid.c4,.ugrid.c5{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.ugrid.c3,.ugrid.c4,.ugrid.c5{grid-template-columns:repeat(2,1fr)}}
+/* 系列底部说明 */
+.series-desc{margin-top:28px;font-size:12.5px;line-height:2;color:var(--ink-dim);letter-spacing:1px;max-width:940px}
+.series-desc b{color:#d4d4d8;font-weight:600}
 
 /* 图片 */
 .ph{position:relative;overflow:hidden;border-radius:var(--rad);aspect-ratio:4/3;background:#0b0b0e;
@@ -215,8 +237,8 @@ h2 .gx{background:var(--grad);-webkit-background-clip:text;background-clip:text;
 .about-card{position:relative;border-radius:24px;overflow:hidden;padding:14px;
   background:var(--glass-bg);border:var(--glass-bd);box-shadow:var(--glass-hi);
   backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%)}
-.about-card .frame{border-radius:16px;overflow:hidden;aspect-ratio:966/1284;background:#fff}
-.about-card img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:saturate(.98)}
+.about-card .frame{border-radius:16px;overflow:hidden;aspect-ratio:1275/1700;background:#0b0b0e}
+.about-card img{width:100%;height:100%;object-fit:contain;object-position:center center;filter:saturate(.98)}
 .about-card .name{font-family:var(--serif);font-size:26px;letter-spacing:6px;text-align:center;padding:18px 0 4px;font-weight:700}
 .about-card .en{text-align:center;font-size:11px;letter-spacing:5px;color:var(--ink-dim);padding-bottom:16px}
 .about-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
@@ -380,106 +402,171 @@ footer .f-logo{font-family:var(--serif);letter-spacing:5px;color:var(--ink)}
   </div>
 
   <!-- 铁火人间 -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 01</span><h3>铁火人间</h3><p>民俗纪实 · 打铁花</p></div>
-    <div data-lb="铁火人间">
-      <figure class="ph banner"><img src="assets/photos/art-tiehuo/art-tiehuo-01.jpg" loading="lazy" alt=""><figcaption>铁火人间 · 主视觉</figcaption></figure>
-      <div class="masonry m2">
-        <figure class="ph st-tall"><img src="assets/photos/art-tiehuo/art-tiehuo-02.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅱ</figcaption></figure>
-        <figure class="ph st-sq"><img src="assets/photos/art-tiehuo/art-tiehuo-03.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅲ</figcaption></figure>
-        <figure class="ph st-land"><img src="assets/photos/art-tiehuo/art-tiehuo-04.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅳ</figcaption></figure>
-        <figure class="ph st-tall"><img src="assets/photos/art-tiehuo/art-tiehuo-05.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅴ</figcaption></figure>
+  <div class="series rv" data-lb="铁火人间">
+    <figure class="s-banner">
+      <img src="assets/photos/art-tiehuo/art-tiehuo-01.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>铁火人间</h3>
+        <div class="roles"><i>副导演｜创意</i><em>民俗纪实</em><em>打铁花</em></div>
       </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>民俗纪实 · 摄影</span></div>
+    <h4 class="sub-title">系列精选</h4>
+    <div class="ugrid c4">
+      <figure class="ph"><img src="assets/photos/art-tiehuo/art-tiehuo-02.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅱ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-tiehuo/art-tiehuo-03.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅲ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-tiehuo/art-tiehuo-04.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅳ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-tiehuo/art-tiehuo-05.jpg" loading="lazy" alt=""><figcaption>铁火人间 Ⅴ</figcaption></figure>
     </div>
+    <p class="series-desc">千年绝技<b>打铁花</b>——1600℃ 的铁水泼向夜空，炸成漫天金雨。我在火与人之间穿梭取景，记录民间手艺人以血肉之躯承接烈焰的瞬间：火是他的舞台，也是他的勋章。</p>
   </div>
 
   <!-- 古今对望 -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 02 · 获奖作品</span><h3>古今对望</h3><p>人文 · 竖幅叙事</p></div>
-    <div class="stagger" data-lb="古今对望">
+  <div class="series rv" data-lb="古今对望">
+    <figure class="s-banner">
+      <img src="assets/photos/art-gujin/art-gujin-01.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>古今对望</h3>
+        <div class="roles"><i>获奖作品</i><em>人文纪实</em><em>竖幅叙事</em></div>
+      </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>人文 · 竖幅叙事</span></div>
+    <h4 class="sub-title">五联竖幅 · 高低节奏</h4>
+    <div class="ugrid c5">
       <figure class="ph"><img src="assets/photos/art-gujin/art-gujin-01.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅰ</figcaption></figure>
-      <figure class="ph dn"><img src="assets/photos/art-gujin/art-gujin-02.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅱ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-gujin/art-gujin-02.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅱ</figcaption></figure>
       <figure class="ph"><img src="assets/photos/art-gujin/art-gujin-03.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅲ</figcaption></figure>
-      <figure class="ph dn"><img src="assets/photos/art-gujin/art-gujin-04.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅳ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-gujin/art-gujin-04.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅳ</figcaption></figure>
       <figure class="ph"><img src="assets/photos/art-gujin/art-gujin-05.jpg" loading="lazy" alt=""><figcaption>古今对望 Ⅴ</figcaption></figure>
     </div>
+    <p class="series-desc">五张竖幅并列成一组<b>「对望」</b>：古建筑与今人互为镜像，一瞬的目光跨过千年。统一的竖幅比例让视线像翻页一样逐一读完，奖次与内容都交给画面自己说话。</p>
   </div>
 
   <!-- 汉正街的搬运工 -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 03</span><h3>汉正街的搬运工</h3><p>街头纪实 · 劳动者群像</p></div>
-    <div class="masonry" data-lb="汉正街的搬运工">
-      <figure class="ph st-tall"><img src="assets/photos/art-hanzheng/art-hanzheng-01.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅰ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/art-hanzheng/art-hanzheng-02.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅱ</figcaption></figure>
-      <figure class="ph st-sq"><img src="assets/photos/art-hanzheng/art-hanzheng-03.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅲ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/art-hanzheng/art-hanzheng-04.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅳ</figcaption></figure>
-      <figure class="ph st-tall"><img src="assets/photos/art-hanzheng/art-hanzheng-05.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅴ</figcaption></figure>
+  <div class="series rv" data-lb="汉正街的搬运工">
+    <figure class="s-banner">
+      <img src="assets/photos/art-hanzheng/art-hanzheng-01.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>汉正街的搬运工</h3>
+        <div class="roles"><i>街头纪实</i><em>劳动者群像</em></div>
+      </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>街头纪实 · 摄影</span></div>
+    <h4 class="sub-title">系列精选</h4>
+    <div class="ugrid c4">
+      <figure class="ph"><img src="assets/photos/art-hanzheng/art-hanzheng-02.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅱ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-hanzheng/art-hanzheng-03.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅲ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-hanzheng/art-hanzheng-04.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅳ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-hanzheng/art-hanzheng-05.jpg" loading="lazy" alt=""><figcaption>搬运工 Ⅴ</figcaption></figure>
     </div>
+    <p class="series-desc">武汉汉正街，<b>扁担与板车</b>仍在巷子里穿行。我把镜头放低，拍他们被货物压弯又撑直的脊背——汗水砸在地面上的声音，是这座城市最诚实的节拍。</p>
   </div>
 
   <!-- 文明经纬 / time -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 04</span><h3>文明经纬 × Time</h3><p>观念影像</p></div>
-    <div class="stagger s4" data-lb="文明经纬">
+  <div class="series rv" data-lb="文明经纬 × Time">
+    <figure class="s-banner">
+      <img src="assets/photos/art-wenming/art-wenming-01.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>文明经纬 × Time</h3>
+        <div class="roles"><i>观念影像</i><em>组照</em></div>
+      </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>观念影像 · 组照</span></div>
+    <h4 class="sub-title">文明经纬</h4>
+    <div class="ugrid c4">
       <figure class="ph"><img src="assets/photos/art-wenming/art-wenming-01.jpg" loading="lazy" alt=""><figcaption>文明经纬 Ⅰ</figcaption></figure>
-      <figure class="ph dn"><img src="assets/photos/art-wenming/art-wenming-02.jpg" loading="lazy" alt=""><figcaption>文明经纬 Ⅱ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-wenming/art-wenming-02.jpg" loading="lazy" alt=""><figcaption>文明经纬 Ⅱ</figcaption></figure>
       <figure class="ph"><img src="assets/photos/art-wenming/art-wenming-03.jpg" loading="lazy" alt=""><figcaption>文明经纬 Ⅲ</figcaption></figure>
-      <figure class="ph dn"><img src="assets/photos/art-wenming/art-wenming-04.jpg" loading="lazy" alt=""><figcaption>文明经纬 Ⅳ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-wenming/art-wenming-04.jpg" loading="lazy" alt=""><figcaption>文明经纬 Ⅳ</figcaption></figure>
     </div>
-    <div class="stagger s4" style="margin-top:26px" data-lb="Time">
-      <figure class="ph dn"><img src="assets/photos/art-time/art-time-01.jpg" loading="lazy" alt=""><figcaption>Time Ⅰ</figcaption></figure>
+    <h4 class="sub-title">Time</h4>
+    <div class="ugrid c4">
+      <figure class="ph"><img src="assets/photos/art-time/art-time-01.jpg" loading="lazy" alt=""><figcaption>Time Ⅰ</figcaption></figure>
       <figure class="ph"><img src="assets/photos/art-time/art-time-02.jpg" loading="lazy" alt=""><figcaption>Time Ⅱ</figcaption></figure>
-      <figure class="ph dn"><img src="assets/photos/art-time/art-time-03.jpg" loading="lazy" alt=""><figcaption>Time Ⅲ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-time/art-time-03.jpg" loading="lazy" alt=""><figcaption>Time Ⅲ</figcaption></figure>
       <figure class="ph"><img src="assets/photos/art-time/art-time-04.jpg" loading="lazy" alt=""><figcaption>Time Ⅳ</figcaption></figure>
     </div>
+    <p class="series-desc">两组观念影像互为经纬：<b>《文明经纬》</b>以空间拼贴追问文明的结构，<b>《Time》</b>用同一对象的四段时刻演示时间的形变。四格一行，排列即叙事。</p>
   </div>
 
   <!-- 风光 -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 05</span><h3>光之风景</h3><p>风光 · 城市地理</p></div>
-    <div data-lb="光之风景">
-      <figure class="ph banner"><img src="assets/photos/art-landscape/art-landscape-01.jpg" loading="lazy" alt=""><figcaption>立交 × 城市 · 主视觉</figcaption></figure>
-      <div class="masonry">
-        <figure class="ph st-sq"><img src="assets/photos/art-landscape/art-landscape-02.jpg" loading="lazy" alt=""><figcaption>龙王庙</figcaption></figure>
-        <figure class="ph st-tall"><img src="assets/photos/art-landscape/art-landscape-03.jpg" loading="lazy" alt=""><figcaption>风景习作</figcaption></figure>
-        <figure class="ph st-land"><img src="assets/photos/art-landscape/art-landscape-04.jpg" loading="lazy" alt=""><figcaption>光影即兴</figcaption></figure>
-        <figure class="ph st-land"><img src="assets/photos/art-landscape/art-landscape-05.jpg" loading="lazy" alt=""><figcaption>远望</figcaption></figure>
-        <figure class="ph st-sq"><img src="assets/photos/art-landscape/art-landscape-06.jpg" loading="lazy" alt=""><figcaption>城之轴</figcaption></figure>
-        <figure class="ph st-tall"><img src="assets/photos/art-landscape/art-landscape-07.jpg" loading="lazy" alt=""><figcaption>暮色</figcaption></figure>
+  <div class="series rv" data-lb="光之风景">
+    <figure class="s-banner">
+      <img src="assets/photos/art-landscape/art-landscape-01.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>光之风景</h3>
+        <div class="roles"><i>风光摄影</i><em>城市地理</em></div>
       </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>风光 · 城市地理</span></div>
+    <h4 class="sub-title">系列精选</h4>
+    <div class="ugrid c3">
+      <figure class="ph"><img src="assets/photos/art-landscape/art-landscape-02.jpg" loading="lazy" alt=""><figcaption>龙王庙</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-landscape/art-landscape-03.jpg" loading="lazy" alt=""><figcaption>风景习作</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-landscape/art-landscape-04.jpg" loading="lazy" alt=""><figcaption>光影即兴</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-landscape/art-landscape-05.jpg" loading="lazy" alt=""><figcaption>远望</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-landscape/art-landscape-06.jpg" loading="lazy" alt=""><figcaption>城之轴</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-landscape/art-landscape-07.jpg" loading="lazy" alt=""><figcaption>暮色</figcaption></figure>
     </div>
+    <p class="series-desc">立交桥的曲线、江面的雾、暮色里的城——我把<b>光</b>当作风景的主角，等风、等云、等一盏灯亮起的瞬间按下快门。</p>
   </div>
 
   <!-- 车展 -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 06 · 一等奖作品</span><h3>流光曳影 · U9 的未来狂想</h3><p>2025 武汉国际车展摄影大赛 一等奖</p></div>
-    <div data-lb="流光曳影">
-      <figure class="ph banner"><img src="assets/photos/art-chezhan/art-chezhan-07.jpg" loading="lazy" alt=""><figcaption>流光曳影 · U9 主视觉</figcaption></figure>
-      <div class="masonry">
-        <figure class="ph st-tall"><img src="assets/photos/art-chezhan/art-chezhan-02.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅱ</figcaption></figure>
-        <figure class="ph st-land"><img src="assets/photos/art-chezhan/art-chezhan-03.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅲ</figcaption></figure>
-        <figure class="ph st-land"><img src="assets/photos/art-chezhan/art-chezhan-04.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅳ</figcaption></figure>
-        <figure class="ph st-sq"><img src="assets/photos/art-chezhan/art-chezhan-05.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅴ</figcaption></figure>
-        <figure class="ph st-tall"><img src="assets/photos/art-chezhan/art-chezhan-06.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅵ</figcaption></figure>
-        <figure class="ph st-tall"><img src="assets/photos/art-chezhan/art-chezhan-01.jpg" loading="lazy" alt=""><figcaption>仰望 U9</figcaption></figure>
+  <div class="series rv" data-lb="流光曳影">
+    <figure class="s-banner">
+      <img src="assets/photos/art-chezhan/art-chezhan-07.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>流光曳影 · U9 的未来狂想</h3>
+        <div class="roles"><i>2025 武汉国际车展摄影大赛 一等奖</i><em>车展摄影</em><em>长曝光</em></div>
       </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>车展摄影 · 一等奖</span></div>
+    <h4 class="sub-title">系列精选</h4>
+    <div class="ugrid c3">
+      <figure class="ph"><img src="assets/photos/art-chezhan/art-chezhan-01.jpg" loading="lazy" alt=""><figcaption>仰望 U9</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-chezhan/art-chezhan-02.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅱ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-chezhan/art-chezhan-03.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅲ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-chezhan/art-chezhan-04.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅳ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-chezhan/art-chezhan-05.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅴ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/art-chezhan/art-chezhan-06.jpg" loading="lazy" alt=""><figcaption>流光曳影 Ⅵ</figcaption></figure>
     </div>
+    <p class="series-desc">以<b>长曝光拖影</b>写 U9 的速度感：红蓝光轨掠过车身，钢铁与光在快门里交换位置。该组作品获 2025 武汉国际车展摄影大赛一等奖。</p>
   </div>
 
   <!-- 艺术视频 -->
-  <div class="series rv">
-    <div class="series-head"><span class="no">系列 07 · 影像短片</span><h3>艺术短片 <small style="font-size:12px;color:var(--ink-dim);letter-spacing:2px">— 完整版见文末网盘</small></h3></div>
-    <div data-lb="艺术短片">
-      <figure class="vid banner"><div class="play"></div><img src="assets/video-stills/art-xiangqian.jpg" loading="lazy" alt=""><div class="vlabel"><em>《向前》</em><span class="tag">剧情短片</span></div></figure>
-      <div class="vgrid">
-        <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-zuizhong.jpg" loading="lazy" alt=""><div class="vlabel"><em>《最终版》</em><span class="tag">剧情短片</span></div></figure>
-        <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-secai.jpg" loading="lazy" alt=""><div class="vlabel"><em>《色彩密码》</em><span class="tag">实验影像</span></div></figure>
-        <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-zouchu.jpg" loading="lazy" alt=""><div class="vlabel"><em>《走出》</em><span class="tag">实验影像</span></div></figure>
-        <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-huisheng.jpg" loading="lazy" alt=""><div class="vlabel"><em>《回声》</em><span class="tag">实验影像</span></div></figure>
-        <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-shiyan.jpg" loading="lazy" alt=""><div class="vlabel"><em>《同化》</em><span class="tag">实验影像</span></div></figure>
-        <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-dengjia.jpg" loading="lazy" alt=""><div class="vlabel"><em>《等价交换》</em><span class="tag">实验影像</span></div></figure>
+  <div class="series rv" data-lb="艺术短片">
+    <figure class="s-banner">
+      <img src="assets/video-stills/art-xiangqian.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>艺术短片</h3>
+        <div class="roles"><i>导演｜剪辑｜后期</i><em>剧情短片</em><em>实验影像</em></div>
       </div>
+      <span class="hint">点击图片查看大图 · 完整版见文末网盘</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>MV / 短片 · 影像</span></div>
+    <h4 class="sub-title">短片档案</h4>
+    <div class="ugrid c3">
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-zuizhong.jpg" loading="lazy" alt=""><div class="vlabel"><em>《最终版》</em><span class="tag">剧情短片</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-secai.jpg" loading="lazy" alt=""><div class="vlabel"><em>《色彩密码》</em><span class="tag">实验影像</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-zouchu.jpg" loading="lazy" alt=""><div class="vlabel"><em>《走出》</em><span class="tag">实验影像</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-huisheng.jpg" loading="lazy" alt=""><div class="vlabel"><em>《回声》</em><span class="tag">实验影像</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-shiyan.jpg" loading="lazy" alt=""><div class="vlabel"><em>《同化》</em><span class="tag">实验影像</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/art-dengjia.jpg" loading="lazy" alt=""><div class="vlabel"><em>《等价交换》</em><span class="tag">实验影像</span></div></figure>
     </div>
+    <p class="series-desc">七部艺术短片，从剧情到实验影像——网站仅展示精选剧照，<b>完整成片请移步文末「作品网盘」</b>在线观看。</p>
   </div>
 </section>
 
@@ -491,30 +578,49 @@ footer .f-logo{font-family:var(--serif);letter-spacing:5px;color:var(--ink)}
     <p class="sec-desc">活动、婚礼、赛事、探店与 AI 漫剧——在商业叙事里，把每一个瞬间交付得又快又好。</p>
   </div>
 
-  <div class="series rv">
-    <div class="series-head"><span class="no">商业摄影</span><h3>浦发银行 · 品牌活动跟拍</h3></div>
-    <div class="masonry" data-lb="浦发银行">
-      <figure class="ph st-tall"><img src="assets/photos/biz-pufa/biz-pufa-01.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅰ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/biz-pufa/biz-pufa-02.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅱ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/biz-pufa/biz-pufa-03.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅲ</figcaption></figure>
-      <figure class="ph st-sq"><img src="assets/photos/biz-pufa/biz-pufa-04.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅳ</figcaption></figure>
-      <figure class="ph st-tall"><img src="assets/photos/biz-pufa/biz-pufa-05.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅴ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/biz-pufa/biz-pufa-06.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅵ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/biz-pufa/biz-pufa-07.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅶ</figcaption></figure>
-      <figure class="ph st-sq"><img src="assets/photos/biz-pufa/biz-pufa-08.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅷ</figcaption></figure>
-      <figure class="ph st-tall"><img src="assets/photos/biz-pufa/biz-pufa-09.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅸ</figcaption></figure>
-      <figure class="ph st-land"><img src="assets/photos/biz-pufa/biz-pufa-10.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅹ</figcaption></figure>
+  <div class="series rv" data-lb="浦发银行">
+    <figure class="s-banner">
+      <img src="assets/photos/biz-pufa/biz-pufa-01.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>浦发银行 · 品牌活动跟拍</h3>
+        <div class="roles"><i>商业摄影</i><em>活动跟拍</em><em>品牌纪实</em></div>
+      </div>
+      <span class="hint">点击图片查看大图</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>商业摄影 · 品牌活动</span></div>
+    <h4 class="sub-title">系列精选</h4>
+    <div class="ugrid c3">
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-02.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅱ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-03.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅲ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-04.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅳ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-05.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅴ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-06.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅵ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-07.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅶ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-08.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅷ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-09.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅸ</figcaption></figure>
+      <figure class="ph"><img src="assets/photos/biz-pufa/biz-pufa-10.jpg" loading="lazy" alt=""><figcaption>品牌活动 Ⅹ</figcaption></figure>
     </div>
+    <p class="series-desc">为浦发银行品牌活动提供<b>全流程影像记录</b>：从领导致辞、签约仪式到观众互动，统筹机位与现场光线，当天交付精修成片，客户复购合作。</p>
   </div>
 
-  <div class="series rv">
-    <div class="series-head"><span class="no">商业视频 · 精选画面</span><h3>商业短片档案 <small style="font-size:12px;color:var(--ink-dim);letter-spacing:2px">— 完整版见文末网盘</small></h3></div>
-    <div class="vgrid v4" data-lb="商业短片">
-      <figure class="vid w2"><div class="play"></div><img src="assets/video-stills/biz-hunli.jpg" loading="lazy" alt=""><div class="vlabel"><em>婚礼预告</em><span class="tag">婚礼</span></div></figure>
+  <div class="series rv" data-lb="商业短片">
+    <figure class="s-banner">
+      <img src="assets/video-stills/biz-hunli.jpg" loading="lazy" alt="">
+      <div class="veil"></div>
+      <div class="ovl">
+        <h3>商业短片档案</h3>
+        <div class="roles"><i>导演｜摄像｜剪辑</i><em>婚礼</em><em>赛事</em><em>活动</em><em>AI 影像</em></div>
+      </div>
+      <span class="hint">点击图片查看大图 · 完整版见文末网盘</span>
+    </figure>
+    <div class="meta-strip"><span>PORTFOLIO</span><b>潘杰 PAN JIE</b><span>MV / TVC · 商业短片</span></div>
+    <h4 class="sub-title">短片档案</h4>
+    <div class="ugrid c4">
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-saima.jpg" loading="lazy" alt=""><div class="vlabel"><em>赛马跟拍</em><span class="tag">赛事</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-huaban.jpg" loading="lazy" alt=""><div class="vlabel"><em>滑板活动样片</em><span class="tag">赛事</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-lunhua.jpg" loading="lazy" alt=""><div class="vlabel"><em>轮滑公开赛</em><span class="tag">赛事</span></div></figure>
-      <figure class="vid w2"><div class="play"></div><img src="assets/video-stills/biz-daxing.jpg" loading="lazy" alt=""><div class="vlabel"><em>大型晚会快剪</em><span class="tag">活动</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-daxing.jpg" loading="lazy" alt=""><div class="vlabel"><em>大型晚会快剪</em><span class="tag">活动</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-huodong.jpg" loading="lazy" alt=""><div class="vlabel"><em>活动快剪</em><span class="tag">活动</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-shangye.jpg" loading="lazy" alt=""><div class="vlabel"><em>商业活动快剪</em><span class="tag">活动</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-diandian.jpg" loading="lazy" alt=""><div class="vlabel"><em>国家电网活动</em><span class="tag">活动</span></div></figure>
@@ -526,8 +632,9 @@ footer .f-logo{font-family:var(--serif);letter-spacing:5px;color:var(--ink)}
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-wuchuan.jpg" loading="lazy" alt=""><div class="vlabel"><em>校园路演</em><span class="tag">品牌</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-tandian.jpg" loading="lazy" alt=""><div class="vlabel"><em>探店口播</em><span class="tag">美食</span></div></figure>
       <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-aimanju.jpg" loading="lazy" alt=""><div class="vlabel"><em>AI 漫剧 · 样片</em><span class="tag">AI影像</span></div></figure>
-      <figure class="vid w2"><div class="play"></div><img src="assets/video-stills/biz-aigao.jpg" loading="lazy" alt=""><div class="vlabel"><em>AI 漫剧 · 预告</em><span class="tag">AI影像</span></div></figure>
+      <figure class="vid"><div class="play"></div><img src="assets/video-stills/biz-aigao.jpg" loading="lazy" alt=""><div class="vlabel"><em>AI 漫剧 · 预告</em><span class="tag">AI影像</span></div></figure>
     </div>
+    <p class="series-desc">十六部商业短片，覆盖<b>婚礼、赛事、活动、品牌与 AI 漫剧</b>五类题材——独立完成机位调度、剪辑节奏与调色包装，最快当天交付。网站仅展示精选画面，<b>完整成片请移步文末「作品网盘」</b>。</p>
   </div>
 </section>
 
@@ -762,7 +869,7 @@ let group = [], gi = 0;
 function openLB(figs, idx){
   group = [...figs].map(f => {
     const img = f.querySelector("img");
-    const cap = f.querySelector("figcaption, .vlabel em");
+    const cap = f.querySelector("figcaption, .vlabel em, .ovl h3");
     return {src: img.src, cap: cap ? cap.textContent : ""};
   });
   gi = idx; renderLB(); lb.classList.add("open");
